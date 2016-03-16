@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
     ListViewAdapter adapter;
     ProgressDialog mProgressDialog;
     ArrayList<HashMap<String, String>> arraylist;
-    static String RANK = "rank";
-    static String COUNTRY = "country";
-    static String POPULATION = "population";
-    static String FLAG = "flag";
+    static String PID = "pid";
+    static String NAME = "name";
+    static String PRICE = "price";
+    //static String FLAG = "flag";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
            /* // Set progressdialog title
             mProgressDialog.setTitle("Android JSON Parse Tutorial");*/
             // Set progressdialog message
-            mProgressDialog.setMessage("Loading...");
+            mProgressDialog.setMessage("Loading Recepies...");
             mProgressDialog.setIndeterminate(false);
             // Show progressdialog
             mProgressDialog.show();
@@ -78,20 +78,20 @@ public class MainActivity extends AppCompatActivity {
             arraylist = new ArrayList<HashMap<String, String>>();
             // Retrieve JSON Objects from the given URL address
             jsonobject = JSONfunctions
-                    .getJSONfromURL("http://www.androidbegin.com/tutorial/jsonparsetutorial.txt");
+                    .getJSONfromURL("http://192.168.2.101/android_connect/get_all_products.php");
 
             try {
                 // Locate the array name in JSON
-                jsonarray = jsonobject.getJSONArray("worldpopulation");
+                jsonarray = jsonobject.getJSONArray("products");
 
                 for (int i = 0; i < jsonarray.length(); i++) {
                     HashMap<String, String> map = new HashMap<String, String>();
                     jsonobject = jsonarray.getJSONObject(i);
                     // Retrive JSON Objects
-                    map.put("rank", jsonobject.getString("rank"));
-                    map.put("country", jsonobject.getString("country"));
-                    map.put("population", jsonobject.getString("population"));
-                    map.put("flag", jsonobject.getString("flag"));
+                    map.put("pid", jsonobject.getString("pid"));
+                    map.put("name", jsonobject.getString("name"));
+                        map.put("price", jsonobject.getString("price"));
+                    //map.put("flag", jsonobject.getString("flag"));
                     // Set the JSON Objects into the array
                     arraylist.add(map);
                 }

@@ -17,10 +17,10 @@
         android:id="@+id/ranklabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ranklabel" />
+        android:text="@string/pidlabel" />
 
     <TextView
-        android:id="@+id/rank"
+        android:id="@+id/pid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/ranklabel" />
@@ -30,13 +30,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ranklabel"
-        android:text="@string/countrylabel" />
+        android:text="@string/namelabel" />
 
     <TextView
-        android:id="@+id/country"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rank"
+        android:layout_below="@+id/pid"
         android:layout_toRightOf="@+id/countrylabel" />
 
     <TextView
@@ -44,13 +44,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/countrylabel"
-        android:text="@string/populationlabel" />
+        android:text="@string/pricelabel" />
 
     <TextView
-        android:id="@+id/population"
+        android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/country"
+        android:layout_below="@+id/name"
         android:layout_toRightOf="@+id/populationlabel" />
 
     <ImageView
@@ -66,9 +66,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_marginRight="23dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="9dp"
         android:layout_alignTop="@+id/dec"
         android:layout_toLeftOf="@+id/inc"
         android:layout_toStartOf="@+id/inc" />
@@ -91,7 +91,29 @@
         android:layout_width="30dp"
         android:layout_height="40dp"
         android:text="+"
-        android:layout_below="@+id/population"
+        android:layout_below="@+id/price"
         android:layout_toLeftOf="@+id/flag" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:background="@drawable/concal"
+        android:id="@+id/button"
+        android:layout_marginBottom="58dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/ranklabel"
+        android:layout_toEndOf="@+id/ranklabel" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm"
+        android:background="@drawable/concal"
+        android:id="@+id/button2"
+        android:layout_alignBaseline="@+id/button"
+        android:layout_alignBottom="@+id/button"
+        android:layout_alignRight="@+id/dec"
+        android:layout_alignEnd="@+id/dec" />
 
 </RelativeLayout>
