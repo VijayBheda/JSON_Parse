@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     // Retrive JSON Objects
                     map.put("pid", jsonobject.getString("pid"));
                     map.put("name", jsonobject.getString("name"));
-                        map.put("price", jsonobject.getString("price"));
+                    map.put("price", jsonobject.getString("price"));
                     //map.put("flag", jsonobject.getString("flag"));
                     // Set the JSON Objects into the array
                     arraylist.add(map);

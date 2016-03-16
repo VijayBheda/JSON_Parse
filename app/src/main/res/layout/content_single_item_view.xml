@@ -98,7 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cancel"
-        android:background="@drawable/concal"
+        android:background="@drawable/ic_delete_black_24dp"
         android:id="@+id/button"
         android:layout_marginBottom="58dp"
         android:layout_alignParentBottom="true"
@@ -109,11 +109,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirm"
-        android:background="@drawable/concal"
+        android:background="@drawable/ic_done_black_24dp"
         android:id="@+id/button2"
-        android:layout_alignBaseline="@+id/button"
-        android:layout_alignBottom="@+id/button"
-        android:layout_alignRight="@+id/dec"
-        android:layout_alignEnd="@+id/dec" />
+        android:layout_alignTop="@+id/button"
+        android:layout_toLeftOf="@+id/result"
+        android:layout_toStartOf="@+id/result" />
 
 </RelativeLayout>
