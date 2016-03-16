@@ -10,7 +10,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.vij.jsonparse.SingleItemView"
-    tools:showIn="@layout/activity_single_item_view">
+    tools:showIn="@layout/activity_single_item_view"
+    android:id="@+id/relative">
 
     <TextView
         android:id="@+id/ranklabel"
@@ -59,5 +60,38 @@
         android:layout_alignParentRight="true"
         android:background="#000000"
         android:padding="1dp" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginRight="23dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginTop="8dp"
+        android:layout_alignTop="@+id/dec"
+        android:layout_toLeftOf="@+id/inc"
+        android:layout_toStartOf="@+id/inc" />
+
+    <Button
+        style="?borderlessButtonStyle"
+        android:id="@+id/dec"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:text="-"
+        android:layout_marginRight="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_alignTop="@+id/inc"
+        android:layout_toLeftOf="@+id/result"
+        android:layout_toStartOf="@+id/result" />
+
+    <Button
+        style="?borderlessButtonStyle"
+        android:id="@+id/inc"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:text="+"
+        android:layout_below="@+id/population"
+        android:layout_toLeftOf="@+id/flag" />
 
 </RelativeLayout>

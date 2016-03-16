@@ -4,13 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SingleItemView extends AppCompatActivity {
+public class SingleItemView extends AppCompatActivity implements View.OnClickListener{
+
+    int counter;
+    Button inc, dec;
+    TextView result;
 
     // Declare Variables
     String rank;
@@ -35,15 +41,15 @@ public class SingleItemView extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        Intent i = getIntent();
+        Intent inte = getIntent();
         // Get the result of rank
-        rank = i.getStringExtra("rank");
+        rank = inte.getStringExtra("rank");
         // Get the result of country
-        country = i.getStringExtra("country");
+        country = inte.getStringExtra("country");
         // Get the result of population
-        population = i.getStringExtra("population");
+        population = inte.getStringExtra("population");
         // Get the result of flag
-        flag = i.getStringExtra("flag");
+        flag = inte.getStringExtra("flag");
 
         // Locate the TextViews in singleitemview.xml
         TextView txtrank = (TextView) findViewById(R.id.rank);
@@ -62,6 +68,32 @@ public class SingleItemView extends AppCompatActivity {
         // Passes flag images URL into ImageLoader.class
         imageLoader.DisplayImage(flag, imgflag);
 
-    }
+        counter = 0;
+        inc =(Button)findViewById(R.id.inc);
+        dec = (Button)findViewById(R.id.dec);
 
+        result = (TextView)findViewById(R.id.result);
+        inc.setOnClickListener(this);
+        dec.setOnClickListener(this);
+
+    }
+    public void onClick(View v)
+    {
+        boolean showText = false;
+
+        switch(v.getId())
+        {
+            case R.id.inc:
+                counter++;
+                showText = true;
+                break;
+            case R.id.dec:
+                counter--;
+                showText = true;
+                break;
+
+        }
+        if (showText)
+            result.setText("Q :"+ counter);
+    }
 }

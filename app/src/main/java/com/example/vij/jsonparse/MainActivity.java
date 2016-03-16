@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
             super.onPreExecute();
             // Create a progressdialog
             mProgressDialog = new ProgressDialog(MainActivity.this);
-            // Set progressdialog title
-            mProgressDialog.setTitle("Android JSON Parse Tutorial");
+           /* // Set progressdialog title
+            mProgressDialog.setTitle("Android JSON Parse Tutorial");*/
             // Set progressdialog message
             mProgressDialog.setMessage("Loading...");
             mProgressDialog.setIndeterminate(false);
